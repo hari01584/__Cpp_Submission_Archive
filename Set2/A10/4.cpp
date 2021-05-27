@@ -1,3 +1,5 @@
+// TODO: Rather have a better implementation! Rewrite if you have time
+
 #include <iostream>
 using namespace std;
 template<class T>
@@ -32,6 +34,7 @@ int main(){
 	int a = 10;
 	int b = 20;
 	int c = 40;
+	int d = 80;
 	
 	LinkedList<int>* a1 = new LinkedList<int>();
 	a1->data = a;
@@ -39,7 +42,10 @@ int main(){
 	b1->data = b;
 	LinkedList<int>* c1 = new LinkedList<int>();
 	c1->data = c;
+	LinkedList<int>* d1 = new LinkedList<int>();
+	d1->data = d;
 	
+	c1->insert(d1);
 	b1->insert(c1);
 	a1->insert(b1);
 	
