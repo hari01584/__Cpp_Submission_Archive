@@ -6,7 +6,7 @@ public:
 	T pop(){
 		LinkedList ret = *next;
 		delete next;
-		return ret;
+		return this;
 	}
 	void insert(T t){
 		*next = t;
@@ -15,3 +15,5 @@ public:
 		return *next;
 	}
 };
+
+int main(){}
