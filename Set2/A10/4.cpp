@@ -5,10 +5,12 @@ class LinkedList{
 public:
 	LinkedList *next;
 	int data;
-	T pop(){
-		LinkedList ret = *next;
-		delete next;
-		return this;
+	LinkedList* pop(){
+		LinkedList* n = next;
+		data = n->data;
+		LinkedList* nn = n->Next();
+		next = nn;
+		return nn;
 	}
 	void insert(LinkedList* t){
 		next = t;
@@ -19,6 +21,7 @@ public:
 };
 
 void display(LinkedList<int> * obj){
+	obj->pop();
 	do{
 		cout<<obj->data<<endl;
 	}
