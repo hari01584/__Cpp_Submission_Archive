@@ -11,10 +11,18 @@ class CustomException{
 int main(){
 	int x = 10;
 	try{
-		if(x==10) throw new CustomException();
+		try{
+			if(x==10) throw new CustomException();
+		}
+		catch(CustomException* c){
+			cout<<"Find custom exception"<<endl;
+			delete c;
+			throw new CustomException();
+		}
 	}
 	catch(CustomException* c){
-		cout<<"Find custom exception"<<endl;
+		cout<<"Rethrown custom exception"<<endl;
 		delete c;
 	}
+	
 }
